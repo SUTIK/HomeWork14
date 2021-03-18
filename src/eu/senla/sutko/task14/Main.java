@@ -13,6 +13,7 @@ import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -31,11 +32,19 @@ public class Main {
        );
 
 
-       //for (Processor i : Processors
-       //     ) {
-       //    System.out.println(i.toString());
+        //Фильтрует по частоте
+        //Processors.stream().filter(processor -> processor.getCoreСlockSpeed()>2.0).collect(Collectors.toList());
+        List<Processor> sortedProcessors = Processors.stream()
+                .filter(processor -> processor.getCoreСlockSpeed()>2.0)
+                .collect(Collectors.toList());
 
-       //}
+      for (Processor i : sortedProcessors
+           ) {
+          System.out.println(i.toString());
+
+      }
+
+
 
 
 
