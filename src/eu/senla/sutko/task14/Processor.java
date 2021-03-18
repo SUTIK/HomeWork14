@@ -45,7 +45,6 @@ public class Processor {
         this.coreСlockSpeed = coreСlockSpeed;
     }
 
-
     public Processor() {
     }
 
@@ -58,8 +57,13 @@ public class Processor {
     }
 
     private String modelProcessorName;
-private Integer numberOfCores;
-private Double coreСlockSpeed;
+    private Integer numberOfCores;
+    private Double coreСlockSpeed;
+
+    //метод считает частоту процессора
+    double summCoreСlockSpeed(){
+        return this.getCoreСlockSpeed()*this.getNumberOfCores();
+    }
 
 
     @Override

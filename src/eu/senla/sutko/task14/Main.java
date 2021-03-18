@@ -29,12 +29,14 @@ public class Main {
                new Processor("Celeron", 4, 2.6)
        );
 
+       Processor a1 = new Processor("Cel",2,1.8);
+        System.out.println(a1.summCoreСlockSpeed());
 
         System.out.println("_____________________ФИЛЬТР_______________________");
         //Фильтрует по частоте
         //Processors.stream().filter(processor -> processor.getCoreСlockSpeed()>2.0).collect(Collectors.toList());
         List<Processor> sortedProcessors = Processors.stream()
-                .filter(processor -> processor.getCoreСlockSpeed()>2.0)
+                .filter(processor -> processor.summCoreСlockSpeed()>3.0)
                 .collect(Collectors.toList());
 
       for (Processor i : sortedProcessors)
