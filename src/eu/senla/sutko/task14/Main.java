@@ -54,6 +54,18 @@ public class Main {
         {
             System.out.println(i.toString());
         }
+        System.out.println("__________________MAP___________________");
+        double summ = Processors.stream().mapToInt(processor ->processor.getNumberOfCores()).sum();
+        System.out.println("Сумма ядер всех процессоров = "+summ);
+
+        //System.out.println("_________________PEEK__________________");
+       // List<Processor>peekProcessors= Processors.stream().peek(Processor-> Processor.getNumberOfCores()*2).collect(Collectors.toList());
+        System.out.println("_________________LIMIT__________________");
+        List<Processor> limitProcessors = Processors.stream().limit(3).collect(Collectors.toList());
+        for (Processor i : limitProcessors)
+        {
+            System.out.println(i.toString());
+        }
 
 
 
