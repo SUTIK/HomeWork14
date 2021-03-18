@@ -10,6 +10,8 @@ package eu.senla.sutko.task14;
 //
 
 
+import java.util.Objects;
+
 public class Processor {
 
     public void setModelProcessorName(String modelProcessorName) {
@@ -60,8 +62,18 @@ private Integer numberOfCores;
 private Double coreСlockSpeed;
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Processor processor = (Processor) o;
+        return modelProcessorName.equals(processor.modelProcessorName) && numberOfCores.equals(processor.numberOfCores) && coreСlockSpeed.equals(processor.coreСlockSpeed);
+    }
 
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(modelProcessorName, numberOfCores, coreСlockSpeed);
+    }
 }
 
 
