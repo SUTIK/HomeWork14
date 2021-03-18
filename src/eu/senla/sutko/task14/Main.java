@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
        List<Processor> Processors = Arrays.asList(
-               new Processor ("Intel", 1, 1.8),
+               new Processor("Intel", 1, 1.8),
                new Processor("Celeron", 1, 2.2),
                new Processor("Athlon", 2, 1.3),
                new Processor("Intel", 1, 1.9),
@@ -34,7 +34,6 @@ public class Main {
 
         System.out.println("_____________________ФИЛЬТР_______________________");
         //Фильтрует по частоте
-        //Processors.stream().filter(processor -> processor.getCoreСlockSpeed()>2.0).collect(Collectors.toList());
         List<Processor> sortedProcessors = Processors.stream()
                 .filter(processor -> processor.summCoreСlockSpeed()>3.0)
                 .collect(Collectors.toList());
@@ -68,6 +67,8 @@ public class Main {
         {
             System.out.println(i.toString());
         }
+        System.out.println("__________________SORTED___________________");
+        Processors.stream().sorted(new ProcessorsComparator()).forEach(System.out::println);
 
 
 
